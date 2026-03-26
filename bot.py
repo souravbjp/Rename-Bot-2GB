@@ -7,6 +7,7 @@ from pyrogram import Client, __version__
 from pyrogram.raw.all import layer
 from config import Config
 from aiohttp import web
+from pyromod import listen
 
 routes = web.RouteTableDef()
 
@@ -33,6 +34,7 @@ class Bot(Client):
             plugins={"root": "TechifyBots"},
             sleep_threshold=15,
         )
+        listen(self)
 
     async def start(self):
         await super().start()
