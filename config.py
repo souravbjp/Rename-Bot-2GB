@@ -7,7 +7,7 @@ class Config(object):
     API_HASH = os.environ.get("API_HASH", "5ff29abc57a9233e50677f26164a5e1a")
     BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
     DATABASE_NAME = os.environ.get("DATABASE_NAME","techifybots")     
-    DATABASE_URL = os.environ.get("DATABASE_URL","")
+    DATABASE_URL = os.environ.get("DATABASE_URL","mongodb+srv://amileaamazar_db_user:T033Ix1RZWtsnsfW@cluster0.hr41nqp.mongodb.net/?appName=Cluster0")
     PICS = (os.environ.get("PICS", "https://i.ibb.co/MDssddJp/pic.jpg https://i.ibb.co/n8fQ2xcx/pic.jpg")).split()
     ADMIN = int(os.environ.get("ADMIN", "1261590582"))
     IS_FSUB = os.environ.get("IS_FSUB", "False").lower() == "true"  # Set "True" For Enable Force Subscribe
