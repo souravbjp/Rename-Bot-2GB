@@ -34,14 +34,15 @@ class Bot(Client):
             plugins={"root": "TechifyBots"},
             sleep_threshold=15,
         )
+
         listen(self)
 
-# 🔥 ADD THIS FIX
-if not hasattr(self, "listeners"):
-    self.listeners = {}
+        # 🔥 FIX FOR PYROFORK (INSIDE __init__)
+        if not hasattr(self, "listeners"):
+            self.listeners = {}
 
-self.listeners.setdefault("message", [])
-self.listeners.setdefault("callback_query", [])
+        self.listeners.setdefault("message", [])
+        self.listeners.setdefault("callback_query", [])
 
     async def start(self):
         await super().start()
