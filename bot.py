@@ -36,6 +36,13 @@ class Bot(Client):
         )
         listen(self)
 
+# 🔥 ADD THIS FIX
+if not hasattr(self, "listeners"):
+    self.listeners = {}
+
+self.listeners.setdefault("message", [])
+self.listeners.setdefault("callback_query", [])
+
     async def start(self):
         await super().start()
         me = await self.get_me()
